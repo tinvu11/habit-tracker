@@ -98,7 +98,7 @@ public class HabitReminderReceiver extends BroadcastReceiver {
         /**(NotificationCompat.Builder builder Bản thiết kế thông báo)*/
         // Nó nói thông báo này thuộc về "kênh" nào (ví dụ: kênh "Nhắc nhở"). Nếu ID này sai hoặc kênh chưa được tạo, thông báo sẽ không hiện.
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, MyHabitApp.CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_add) // (Icon nhỏ trên thanh trạng thái)
+                .setSmallIcon(R.drawable.ic_launcher_foreground) // (Icon nhỏ trên thanh trạng thái)
                 .setContentTitle("Đến giờ rồi!")
                 .setContentText("Hãy thực hiện thói quen: " + habit.getName())
                 .setPriority(NotificationCompat.PRIORITY_HIGH)

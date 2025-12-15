@@ -26,6 +26,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -79,6 +80,20 @@ public class AddFragment extends Fragment {
     private List<String> colorsHexList = new ArrayList<>();
     private static final int REQUEST_NOTIFICATION_PERMISSION = 102;
     private InterstitialAd mInterstitialAd;
+    private final androidx.activity.result.ActivityResultLauncher<String> requestPermissionLauncher =
+            registerForActivityResult(new androidx.activity.result.contract.ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    binding.switchNotification.setChecked(true);
+                    Toast.makeText(requireContext(), "Đã bật thông báo nhắc nhở", Toast.LENGTH_SHORT).show();
+                } else {
+                    binding.switchNotification.setChecked(false);
+                    if (!ActivityCompat.shouldShowRequestPermissionRationale(requireActivity(), Manifest.permission.POST_NOTIFICATIONS)) {
+                        showGoToSettingsDialog();
+                    } else {
+                        Toast.makeText(requireContext(), "Bạn cần cấp quyền để nhận thông báo", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -134,7 +149,7 @@ public class AddFragment extends Fragment {
         colorLayoutManager = new LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false);
         binding.rvColors.setLayoutManager(colorLayoutManager);
         binding.rvColors.setAdapter(colorAdapter);
-        addEditHabitViewModel.updateSelectedIcon(R.drawable.ic_broccoli);
+        addEditHabitViewModel.updateSelectedIcon(R.drawable.ic_running);
     }
 
     private void initListeners() {
@@ -408,8 +423,6 @@ public class AddFragment extends Fragment {
                 selectedDateMillis[0] = calendar.getTimeInMillis();
             });
 
-
-
             btnCancel.setOnClickListener(v1 -> dialog1.dismiss());
             btnOk.setOnClickListener(v1 -> {
                 LocalDate date = Instant.ofEpochMilli(selectedDateMillis[0])
@@ -566,20 +579,33 @@ public class AddFragment extends Fragment {
 
     private void requestNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            if (shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)) {
-                // Người dùng đã từ chối quyền trước đó, hiển thị dialog giải thích
-                showPermissionRationaleDialog();
-            } else {
-                // Yêu cầu quyền lần đầu
-                requestPermissions(
-                        new String[]{Manifest.permission.POST_NOTIFICATIONS},
-                        REQUEST_NOTIFICATION_PERMISSION
-                );
+            if (ContextCompat.checkSelfPermission(requireContext(), Manifest.permission.POST_NOTIFICATIONS) == PackageManager.PERMISSION_GRANTED) {
+                return;
             }
+
+            if (shouldShowRequestPermissionRationale(Manifest.permission.POST_NOTIFICATIONS)) {
+                new AlertDialog.Builder(requireContext())
+                        .setTitle("Cần quyền thông báo")
+                        .setMessage("Ứng dụng cần quyền thông báo để nhắc nhở bạn về thói quen. Vui lòng cấp quyền")
+                        .setPositiveButton("Đồng ý", (dialog, which) -> {
+                            // Sau khi giải thích xong, gọi lệnh xin quyền hệ thống lần nữa
+                            requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+                        })
+                        .setNegativeButton("Không", (dialog, which) -> {
+                            binding.switchNotification.setChecked(false);
+                            dialog.dismiss();
+                        })
+                        .show();
+            } else {
+                // Xin quyền trực tiếp (hiện popup hệ thống)
+                requestPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+            }
+        } else {
+            // Android < 13 mặc định có quyền
+            binding.switchNotification.setChecked(true);
         }
     }
-
-    private void showPermissionRationaleDialog() {
+    private void showGoToSettingsDialog() {
         new AlertDialog.Builder(requireContext())
                 .setTitle("Cần quyền thông báo")
                 .setMessage("Ứng dụng cần quyền thông báo để nhắc nhở bạn về thói quen. Vui lòng cấp quyền trong cài đặt.")
@@ -592,6 +618,8 @@ public class AddFragment extends Fragment {
                 .setNegativeButton("Hủy", (dialog, which) -> dialog.dismiss())
                 .show();
     }
+
+
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {

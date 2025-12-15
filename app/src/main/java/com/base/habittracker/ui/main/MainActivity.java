@@ -42,8 +42,6 @@ public class MainActivity extends AppCompatActivity {
                 .findFragmentById(R.id.nav_host_fragment); // (ID từ activity_main.xml)
 
         navController = navHostFragment.getNavController();
-        
-        // Yêu cầu quyền thông báo sau 10 giây
         requestNotificationPermissionAfterDelay();
     }
     
@@ -52,13 +50,12 @@ public class MainActivity extends AppCompatActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) { // API 33
                 if (ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
                         != PackageManager.PERMISSION_GRANTED) {
-                    // Hiển thị hộp thoại xin quyền sau 10 giây
                     ActivityCompat.requestPermissions(this,
                             new String[]{Manifest.permission.POST_NOTIFICATIONS},
                             REQUEST_NOTIFICATION_PERMISSION);
                 }
             }
-        }, 3000); // 10000 milliseconds = 10 giây
+        }, 3000);
     }
 
     private void setupStatusBar() {
