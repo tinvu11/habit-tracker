@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="surface">@color/grey_900</color>
+    <color name="onSurface">@color/grey_100</color>
+    <color name="surfaceVariant">@color/grey_800</color>
+    <color name="onSurfaceVariant">@color/grey_300</color>
+    <color name="black">#d4d4d4</color>
+    <color name="itemBottomSheet">#2C2C2C</color>
+    <color name="borderSurfaceVariant">#404040</color>
+</resources>

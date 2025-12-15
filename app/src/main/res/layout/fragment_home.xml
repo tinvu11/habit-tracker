@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+
+    android:layout_marginVertical="8dp"
+    android:background="@color/surface"
+    tools:context=".ui.main.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="16dp"
+        android:id="@+id/appbar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:cardCornerRadius="100dp"
+            app:strokeWidth="0dp"
+            android:elevation="0dp"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/primary"
+            android:id="@+id/imgPremium"
+            app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    >
+                    <ImageView
+                        app:tint="@color/white"
+                        android:layout_gravity="center"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_star"
+                        />
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/month"
+                    style="@style/TextAppearance.Material3.BodyLarge.Emphasized"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Tháng 1"
+                    android:textColor="?attr/colorOnBackground"
+                    app:layout_constraintBottom_toBottomOf="@+id/imgPremium"
+                    app:layout_constraintStart_toEndOf="@+id/imgPremium"
+                    app:layout_constraintTop_toTopOf="@+id/imgPremium" />
+
+                <TextView
+                    android:id="@+id/today"
+                    style="@style/TextAppearance.Material3.BodyMedium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hôm nay"
+                    android:textStyle="bold"
+                    android:layout_marginRight="16dp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnSettings"
+                    app:layout_constraintTop_toTopOf="@+id/month" />
+
+                <ImageView
+                    android:id="@+id/btnSettings"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_settings"
+                    app:tint="@color/primary"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/pageview2"
+                android:layout_width="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_height="70dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appbar" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="6dp"
+                app:layout_constraintTop_toBottomOf="@+id/pageview2"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="?android:attr/listDivider" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/list_item"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="100dp"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:orientation="vertical"
+        tools:listitem="@layout/habit_item"
+        tools:itemCount="1"
+        android:layout_marginTop="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <LinearLayout
+        android:id="@+id/ImageEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="vertical"
+        >
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:src="@drawable/running_bro"
+            />
+
+        <TextView
+            android:text="Hành trình vạn dặm bắt đầu từ một bước chân. Thành công vĩ đại bắt đầu từ một thói quen nhỏ."
+            android:gravity="center"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            />
+    </LinearLayout>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnAddHabit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="24dp"
+                android:clickable="true"
+                app:tint="@color/white"
+                app:shapeAppearanceOverlay="@style/MyFabShape"
+                app:backgroundTint="@color/primary"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_plus" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>

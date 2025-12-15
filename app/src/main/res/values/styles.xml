@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="MyFabShape" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">18dp</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_bottom</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_bottom</item>
+    </style>
+
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+    </style>
+
+    <style name="ThemeOverlay.HabitTracker.DatePicker" parent="ThemeOverlay.Material3.MaterialCalendar">
+        <item name="colorSurfaceContainerHigh">@color/surfaceVariant</item>
+    </style>
+    <!--Theme màu cho time picker( màu của mặt đồng hồ là cao nhất lên phải là hightest-->
+    <style name="ThemeOverlay.HabitTracker.TimePicker" parent="ThemeOverlay.Material3.MaterialTimePicker">
+        <item name="colorSurfaceContainerHighest">@color/grey_100</item>
+        <item name="colorSurfaceContainerHigh">@color/grey_200</item>
+    </style>
+
+    <style name="DialogTitleText" parent="@style/TextAppearance.Material3.TitleLarge.Emphasized">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="DialogListText" parent="@style/TextAppearance.Material3.BodyLarge">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="AppDialogTheme" parent="ThemeOverlay.Material3.MaterialAlertDialog">
+        <item name="materialAlertDialogBodyTextStyle">@style/DialogListText</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/DialogTitleText</item>
+        <item name="colorSurfaceContainerHigh">@color/surfaceVariant</item>
+    </style>
+</resources>

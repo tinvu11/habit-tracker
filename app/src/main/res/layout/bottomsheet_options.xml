@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_dialog_bottom"
+    android:paddingBottom="36dp"
+    android:orientation="vertical">
+    <com.google.android.material.bottomsheet.BottomSheetDragHandleView
+        android:layout_width="match_parent"
+        android:layout_height="34dp"
+        android:paddingVertical="12dp"/>
+    <TextView
+        android:id="@+id/txtTitleSheet"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Tuỳ chọn"
+        android:textAlignment="viewStart"
+        android:textStyle="bold" />
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_item_on_surface"
+        android:backgroundTint="@color/itemBottomSheet"
+        android:paddingHorizontal="10dp"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:backgroundTint="@color/onSurfaceVariant"
+            android:background="@drawable/ic_edit_full"/>
+        <TextView
+            android:id="@+id/txtEdit"
+            style="@style/TextAppearance.Material3.BodyLarge.Emphasized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:layout_marginLeft="10dp"
+            android:gravity="center_vertical"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="Chỉnh sửa" />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/bg_item_on_surface"
+        android:backgroundTint="@color/itemBottomSheet"
+        android:paddingHorizontal="10dp"
+        android:gravity="center"
+        >
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+           android:backgroundTint="@color/red"
+            android:background="@drawable/ic_delete"/>
+        <TextView
+            android:id="@+id/txtDelete"
+            style="@style/TextAppearance.Material3.BodyLarge.Emphasized"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:clickable="true"
+            android:textColor="@color/red"
+            android:focusable="true"
+            android:text="Xoá" />
+    </LinearLayout>
+</LinearLayout>

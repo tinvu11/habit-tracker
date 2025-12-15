@@ -1,0 +1,80 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/fragment_week"
+    android:layout_height="wrap_content">
+
+    <include
+        android:id="@+id/td1"
+        layout="@layout/item_day_of_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintEnd_toStartOf="@id/td2"
+        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <include
+        android:id="@+id/td2"
+        layout="@layout/item_day_of_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/td3"
+        app:layout_constraintStart_toEndOf="@+id/td1"
+        app:layout_constraintTop_toTopOf="@+id/td1" />
+
+    <include
+        android:id="@+id/td3"
+        layout="@layout/item_day_of_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/td4"
+        app:layout_constraintBottom_toBottomOf="@+id/td2"
+        app:layout_constraintStart_toEndOf="@+id/td2"
+        app:layout_constraintTop_toTopOf="@+id/td2" />
+
+
+    <include
+        android:id="@+id/td4"
+        layout="@layout/item_day_of_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/td5"
+        app:layout_constraintBottom_toBottomOf="@+id/td3"
+        app:layout_constraintStart_toEndOf="@+id/td3"
+        app:layout_constraintTop_toTopOf="@+id/td3" />
+
+    <include
+        android:id="@+id/td5"
+        layout="@layout/item_day_of_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/td6"
+        app:layout_constraintBottom_toBottomOf="@+id/td4"
+        app:layout_constraintStart_toEndOf="@+id/td4"
+        app:layout_constraintTop_toTopOf="@+id/td4" />
+    <include
+        android:id="@+id/td6"
+        layout="@layout/item_day_of_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/td7"
+        app:layout_constraintBottom_toBottomOf="@+id/td5"
+        app:layout_constraintStart_toEndOf="@+id/td5"
+        app:layout_constraintTop_toTopOf="@+id/td5" />
+
+    <include
+        android:id="@+id/td7"
+        layout="@layout/item_day_of_week"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/td6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/td6"
+        app:layout_constraintTop_toTopOf="@+id/td6" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

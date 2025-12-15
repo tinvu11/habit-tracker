@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="habit_colors_palette">
+        <item>@color/habit_red</item>
+        <item>@color/habit_pink</item>
+        <item>@color/habit_purple</item>
+        <item>@color/habit_deep_purple</item>
+        <item>@color/habit_indigo</item>
+        <item>@color/habit_blue</item>
+        <item>@color/habit_light_blue</item>
+        <item>@color/habit_cyan</item>
+        <item>@color/habit_green</item>
+        <item>@color/habit_orange</item>
+        <item>@color/habit_yellow</item>
+        <item>@color/habit_brown</item>
+    </integer-array>
+</resources>

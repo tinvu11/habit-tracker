@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="ThemeOverlay.HabitTracker.TimePicker" parent="ThemeOverlay.Material3.MaterialTimePicker">
+        <item name="colorSurfaceContainerHigh">@color/grey_700</item>
+        <item name="colorSurfaceContainerHighest">@color/grey_600</item>
+    </style>
+</resources>

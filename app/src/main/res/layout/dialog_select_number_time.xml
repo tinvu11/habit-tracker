@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_item_on_surface"
+    android:minWidth="300dp"
+    android:padding="24dp">
+
+    <!-- Tiêu đề -->
+    <TextView
+        android:id="@+id/txtDialogInputNumber"
+        style="@style/TextAppearance.Material3.TitleLarge"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nhập số lần"
+        android:textStyle="bold"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Input nhập liệu hiện đại -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilNumberTime"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:boxCornerRadiusTopStart="8dp"
+        app:boxCornerRadiusTopEnd="8dp"
+        android:background="@color/surfaceVariant"
+        app:boxCornerRadiusBottomStart="8dp"
+        app:boxCornerRadiusBottomEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDialogInputNumber">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edtNumberTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:inputType="number"
+            android:maxLength="3"
+            android:paddingVertical="12dp"
+            android:textCursorDrawable="@null"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textSize="18sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Nút Cancel (Dạng Text Button hoặc Outlined để đỡ rối mắt) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnCacleSelect"
+        style="@style/Widget.MaterialComponents.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:text="Hủy"
+        android:textColor="@color/grey_500"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnOKSelect"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilNumberTime" />
+
+    <!-- Nút OK (Dạng Filled Button nổi bật) -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnOKSelect"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:backgroundTint="@color/primary"
+        android:text="Đồng ý"
+        android:textStyle="bold"
+        app:cornerRadius="12dp"
+        app:elevation="4dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnCacleSelect"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/btnCacleSelect"
+        app:layout_constraintTop_toTopOf="@+id/btnCacleSelect" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="false">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp"/>
+            <solid android:color="#FF3B30"/> <!-- đỏ -->
+        </shape>
+    </item>
+
+    <!-- 2. Nếu selected = true => màu xanh -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp"/>
+            <solid android:color="#3DCC43"/>
+        </shape>
+    </item>
+
+    <!-- 3. Mặc định => xám -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="8dp"/>
+            <solid android:color="#D9D9D9"/>
+        </shape>
+    </item>
+</selector>

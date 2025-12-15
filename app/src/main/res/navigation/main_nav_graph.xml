@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.base.habittracker.ui.main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_addEditHabit"
+            app:destination="@id/addEditHabit"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_home_to_detail"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_to_settings"
+            app:destination="@id/settings"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_home_to_stropWatchFragment"
+            app:destination="@id/stropWatchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/addEditHabit"
+        android:name="com.base.habittracker.ui.addedit.AddFragment"
+        android:label="Add/Edit Habit"
+        tools:layout="@layout/fragment_add"
+        >
+        <argument
+            android:name="EXTRA_HABIT_ID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.base.habittracker.ui.details.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail"
+        >
+        <argument
+            android:name="EXTRA_HABIT_ID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.base.habittracker.ui.settings.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" >
+    </fragment>
+    <fragment
+        android:id="@+id/stropWatchFragment"
+        android:name="com.base.habittracker.ui.stopwatch.StopWatchFragment"
+        android:label="fragment_strop_watch"
+        tools:layout="@layout/fragment_strop_watch" >
+        <argument
+            android:name="EXTRA_HABIT_ID"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+</navigation>

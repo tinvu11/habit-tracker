@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="16dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView10"
+            style="@style/TextAppearance.Material3.TitleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giao diện" />
+
+        <TextView
+            android:id="@+id/tvThemeSystem"
+            android:paddingVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giao diện hệ thống" />
+
+        <TextView
+            android:id="@+id/tvThemeLight"
+            android:paddingVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giao diện Sáng" />
+
+        <TextView
+            android:id="@+id/tvThemeDark"
+            android:paddingVertical="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Giao diện Tối" />
+
+    </LinearLayout>

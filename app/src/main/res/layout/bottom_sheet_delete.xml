@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="16dp"
+    android:paddingBottom="32dp"
+    android:background="@drawable/bg_dialog_bottom"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Xoá thói quen"
+        android:textStyle="bold"
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/TextAppearance.Material3.BodyLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Bạn có chắc muốn xoá thói quen này?"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <View
+        android:id="@+id/viewDelete"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_item_on_surface"
+        android:backgroundTint="@color/itemBottomSheet"
+
+        app:layout_constraintEnd_toStartOf="@+id/viewCancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <View
+        android:id="@+id/viewCancel"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/bg_item_on_surface"
+        android:backgroundTint="@color/itemBottomSheet"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/viewDelete"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/txtConfirmDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xoá"
+        style="@style/TextAppearance.Material3.BodyLarge.Emphasized"
+        app:layout_constraintTop_toTopOf="@+id/viewDelete"
+        app:layout_constraintStart_toStartOf="@+id/viewDelete"
+        app:layout_constraintEnd_toEndOf="@+id/viewDelete"
+        app:layout_constraintBottom_toBottomOf="@+id/viewDelete"
+        />
+
+    <TextView
+        android:id="@+id/tvCancelDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Huỷ"
+        style="@style/TextAppearance.Material3.BodyLarge.Emphasized"
+        app:layout_constraintTop_toTopOf="@+id/viewCancel"
+        app:layout_constraintStart_toStartOf="@+id/viewCancel"
+        app:layout_constraintEnd_toEndOf="@+id/viewCancel"
+        app:layout_constraintBottom_toBottomOf="@+id/viewCancel"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

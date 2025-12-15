@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/surfaceVariant">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/tvRestore"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp">
+
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Đăng ký Premium"
+                android:textColor="@color/onSurfaceVariant"
+
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSlogan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="Không bỏ lỡ hoàn thành thói quen mỗi ngày\nvà mở khóa toàn bộ tính năng"
+                android:textColor="#757575"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+            <ImageView
+                android:id="@+id/imgNoAds"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/ic_broom"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSlogan"
+                app:tint="#4CAF50"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvNoAds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Không quảng cáo"
+                android:textColor="@color/onSurfaceVariant"
+
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgNoAds"
+                app:layout_constraintTop_toTopOf="@+id/imgNoAds" />
+
+            <TextView
+                android:id="@+id/tvSubNoAds"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Trải nghiệm mượt mà, tập trung tuyệt đối"
+                android:textColor="#616161"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvNoAds"
+                app:layout_constraintTop_toBottomOf="@+id/tvNoAds" />
+
+            <ImageView
+                android:id="@+id/imgBackup"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_more"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubNoAds"
+                app:tint="#2196F3"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvBackup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Hỗ trợ ưu tiên"
+                android:textColor="@color/onSurfaceVariant"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgBackup"
+                app:layout_constraintTop_toTopOf="@+id/imgBackup" />
+
+            <TextView
+                android:id="@+id/tvSubBackup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Đội ngũ hỗ trợ sẽ giải đáp bạn nhanh nhất"
+                android:textColor="#616161"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvBackup"
+                app:layout_constraintTop_toBottomOf="@+id/tvBackup" />
+
+            <ImageView
+                android:id="@+id/imgCloud"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_marginTop="24dp"
+                android:src="@drawable/ic_check"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvSubBackup"
+                app:tint="#FF9800"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/tvCloud"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="Sao lưu đám mây"
+                android:textColor="@color/onSurfaceVariant"
+
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgCloud"
+                app:layout_constraintTop_toTopOf="@+id/imgCloud" />
+
+            <TextView
+                android:id="@+id/tvSubCloud"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Dữ liệu của bạn luôn được an toàn"
+                android:textColor="#616161"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvCloud"
+                app:layout_constraintTop_toBottomOf="@+id/tvCloud" />
+
+            <Space
+                android:id="@+id/spacer"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                app:layout_constraintTop_toBottomOf="@id/tvSubCloud" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvMonthNoAds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/itemBottomSheet"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spacer"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <!-- TITLE -->
+                    <TextView
+                        android:id="@+id/tvMonthTitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gói 1 Tháng"
+                        android:textColor="@color/onSurfaceVariant"
+
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toStartOf="@id/tvPriceNoAds"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <!-- SUBTITLE -->
+                    <TextView
+                        android:id="@+id/tvMonthSubtitle"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Thanh toán tự động gia hạn"
+                        android:textColor="#757575"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@id/tvPriceNoAds"
+                        app:layout_constraintHorizontal_bias="0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvMonthTitle" />
+
+                    <!-- PRICE (BÊN PHẢI) -->
+                    <TextView
+                        android:id="@+id/tvPriceNoAds"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50.000 đ"
+                        android:textColor="@color/onSurfaceVariant"
+
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvLifetimeNoAds"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="#FFF8E1"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cvMonthNoAds"
+                app:strokeColor="#FFC107"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvLifetimeTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Trọn Đời (Lifetime)"
+                        android:textColor="@android:color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tagBestValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="#FFC107"
+                        android:paddingStart="6dp"
+                        android:paddingTop="2dp"
+                        android:paddingEnd="6dp"
+                        android:paddingBottom="2dp"
+                        android:text="TIẾT KIỆM NHẤT"
+                        android:textColor="@android:color/black"
+                        android:textSize="10sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvLifetimeTitle"
+                        app:layout_constraintStart_toEndOf="@+id/tvLifetimeTitle"
+                        app:layout_constraintTop_toTopOf="@+id/tvLifetimeTitle" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:text="Thanh toán một lần, sở hữu mãi mãi"
+                        android:textColor="#757575"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/tvPriceLifetime"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvLifetimeTitle" />
+
+                    <TextView
+                        android:id="@+id/tvPriceLifetime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="199.000 đ"
+                        android:textColor="@color/grey_950"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/cvLifetimeNoAds" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tvRestore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:padding="12dp"
+        android:text="Khôi phục giao dịch (Restore Purchase)"
+        android:textColor="#9E9E9E"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nestedScrollView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
