@@ -229,7 +229,7 @@ public class DetailFragment extends Fragment {
             int completed = c.getCompletedValue();
             int targetAtThatTime = c.getTargetCompleteValue(); // TODO: nếu mỗi ngày target khác thì lấy từ c
 
-            if (completed >= targetAtThatTime) {
+            if (completed >= 0) {
                 successDays++;
             }
         }
